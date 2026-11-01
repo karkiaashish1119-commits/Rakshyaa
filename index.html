@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18090f">
+  <meta name="description" content="A little birthday world made just for Aaru.">
+  <title>A little something for Aaru</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <main id="experience" aria-label="A birthday surprise for Aaru">
+<section class="scene opening active" aria-label="A little surprise">
+      <div class="scene-inner">
+        <p class="eyebrow">A little note from the night</p>
+        <div class="opening-copy">
+          <p class="opening-line">Some people make life beautiful just by being in it...</p>
+          <p class="opening-line second">and for me, may be you are the one</p>
+        </div>
+        <a class="action primary surprise-button" href="birthday.html">Continue<span aria-hidden="true">&nbsp;✨</span></a>
+      </div>
+    </section>
+  </main>
+  <button class="music-toggle" aria-label="Turn music on" aria-pressed="false" title="Optional music">♫</button>
+  <span class="music-note" aria-hidden="true">Music is off</span>
+  <audio id="birthday-music" loop preload="none"></audio>
+
+  <script src="script.js"></script>
+
+  <audio id="bgMusic" autoplay loop>
+    <source src="jab tak.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("load", function () {
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.5;
+    music.play().catch(() => {
+        document.addEventListener("click", function startMusic() {
+            music.play();
+        }, { once: true });
+    });
+});
+</script>
+</body>
+</html>

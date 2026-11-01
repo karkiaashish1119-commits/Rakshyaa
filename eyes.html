@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18090f">
+  <meta name="description" content="A little birthday world made just for Aaru.">
+  <title>Those eyes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <main id="experience" aria-label="A birthday surprise for Aaru">
+    <section class="scene active" aria-label="A little note about your eyes">
+      <div class="scene-inner">
+        <p class="eyebrow">One little thing I adore</p>
+        <h2>Those eyes...</h2>
+        <figure class="first-meeting">
+          <div class="eyes-photo-frame">
+            <img class="eyes-photo" src="eyes.png" alt="A close-up portrait of a pair of eyes">
+          </div>
+          <figcaption>
+            <p>If I could keep one moment untouched by time, it would be the moment I first saw your eyes.And staring wasn't my thing until I saw your beautiful eyes chashma bhitra batai yeti nasaluu xaaa</p>
+          </figcaption>
+        </figure>
+        <a class="action" href="things-i-like.html">Continue <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+  <button class="music-toggle" aria-label="Turn music on" aria-pressed="false" title="Optional music">♫</button>
+  <span class="music-note" aria-hidden="true">Music is off</span>
+  <audio id="birthday-music" loop preload="none"></audio>
+
+  <script src="script.js"></script>
+
+  <audio id="bgMusic" autoplay loop>
+    <source src="dekha karu.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("load", function () {
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.5;
+    music.play().catch(() => {
+        document.addEventListener("click", function startMusic() {
+            music.play();
+        }, { once: true });
+    });
+});
+</script>
+</body>
+</html>

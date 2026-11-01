@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18090f">
+  <meta name="description" content="A little birthday world made just for Aaru.">
+  <title>Why you?</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <main id="experience" aria-label="A birthday surprise for Aaru">
+<section class="scene active" aria-label="Why you">
+      <div class="scene-inner">
+        <p class="eyebrow">A few words, honestly</p>
+        <div class="why-intro">
+          <h2>Why you?</h2>
+          <p class="lead">I don't really know how to explain it.</p>
+          <p class="lead">There's just something about the way you are that I genuinely like.</p>
+        </div>
+        <figure class="first-meeting">
+          <img src="meet.jpeg" alt="A warm illustrated memory of two students meeting at school">
+          <figcaption>
+            <span class="eyebrow">The day it began</span>
+            <p>I still remember the first day—jun din maile timi sanga bolna aat gareko thiye Kati bajey ho class bhndai, ra tyo din ma timi ma haraisakeko thiye.</p>
+          </figcaption>
+        </figure>
+        <a class="action" href="memories.html">Continue <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+  <button class="music-toggle" aria-label="Turn music on" aria-pressed="false" title="Optional music">♫</button>
+  <span class="music-note" aria-hidden="true">Music is off</span>
+  <audio id="they say" loop preload="none"></audio>
+
+  <script src="script.js"></script>
+  <audio id="bgMusic" autoplay loop>
+    <source src="they say.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("load", function () {
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.5;
+    music.play().catch(() => {
+        document.addEventListener("click", function startMusic() {
+            music.play();
+        }, { once: true });
+    });
+});
+</script>
+</body>
+</html>

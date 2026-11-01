@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18090f">
+  <meta name="description" content="A little birthday world made just for Aaru.">
+  <title>A few moments worth keeping</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <main id="experience" aria-label="A birthday surprise for Aaru">
+<section class="scene active" aria-label="A few moments worth keeping">
+      <div class="scene-inner">
+        <div class="gallery-top">
+          <p class="eyebrow">Xoto bhayeni</p>
+          <h2>MOMENTS<br>I lived in</h2>
+          <p class="lead">yo kura haru samjhera ajhai khushi hunxu maa</p>
+        </div>
+        <div class="gallery-tools">
+ 
+          <input id="photo-picker" class="photo-input" type="file" accept="image/*" multiple>
+        </div>
+        <div class="gallery" aria-live="polite"></div>
+        <p class="fine gallery-hint">Tap a photo to see it closer</p>
+        <a class="action" href="eyes.html">Continue <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+  <button class="music-toggle" aria-label="Turn music on" aria-pressed="false" title="Optional music">♫</button>
+  <span class="music-note" aria-hidden="true">Music is off</span>
+  <audio id="birthday-music" loop preload="none"></audio>
+  <div class="image-modal" role="dialog" aria-modal="true" aria-label="Photo preview">
+    <button class="modal-close" aria-label="Close photo preview">×</button>
+    <img alt="">
+    <p class="modal-caption"></p>
+  </div>
+  <script src="script.js"></script>
+  <audio id="bgMusic" autoplay loop>
+    <source src="treatyou bettter.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("load", function () {
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.5;
+    music.play().catch(() => {
+        document.addEventListener("click", function startMusic() {
+            music.play();
+        }, { once: true });
+    });
+});
+</script>
+</body>
+</html>
